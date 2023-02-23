@@ -1,1 +1,25 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
 
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "ubuntu/jammy64"
+   # require plugin https://github.com/leighmcculloch/vagrant-docker-compose
+   config.vagrant.plugins = "vagrant-docker-compose"
+
+   # install docker and docker-compose
+   config.vm.provision :docker
+   config.vm.provision :docker_compose
+
+  config.vm.define "nginx" do |n|
+    n.vm.hostname = "nginx"
+    n.vm.network "private_network", ip: "192.168.56.11"
+    n.vm.provider "virtualbox" do |vb|
+      vb.memory="1024"
+      vb.cpus="2"
+    end
+    n.vm.provision "shell", inline: <<-SHELL
+    sudo apt update && apt upgrade -y
+    SHELL
+  end
+end
