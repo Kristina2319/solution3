@@ -1,4 +1,4 @@
-FROM wordpress
+FROM wordpress:latest
 
 ENV WORDPRESS_DB_HOST="mysql"
 ENV WORDPRESS_DB_NAME="wordpress"
