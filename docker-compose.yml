@@ -2,18 +2,28 @@ version: 3
 
 services:
   load_balancer:
-  # if docker hub as repository
-    image: andrewmiron/load_balancer
   # if github
-    image: ghr.io/andrewmiron/load_balancer
+    image: ghcr.io/Kristina2319/Solution3/blob/main/apps/nginx
 
   app1:
-    image: andrewmiron/wordpress
+    image: ghcr.io//Kristina2319/Solution3/tree/main/apps/wordpress
+     ports:
+      - 80:80
 
   app2:
-    image: andrewmiron/wordpress
+    image: ghcr.io//Kristina2319/Solution3/tree/main/apps/wordpress
+     ports:
+      - 80:80
 
   db:
     image: mysql
-    environment:
-    # properties to be added
+     environment:
+      - MYSQL_ROOT_PASSWORD=somewordpress
+      - MYSQL_DATABASE=wordpress
+      - MYSQL_USER=wordpress
+      - MYSQL_PASSWORD=wordpress
+    expose:
+      - 3306
+      - 33060
+      volumes:
+  db_data:
