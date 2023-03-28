@@ -8,6 +8,6 @@ RUN cd /tmp/latest.tar.gz
 RUN wget https://wordpress.org/latest.tar.gz
 RUN tar -xzvf latest.tar.gz
 RUN mv latest.tar.gz /var/www/html
-RUN cp configs/wordpress /var/www/html/wordpress
+COPY configs/wordpress /var/www/html/wordpress
 COPY configs/app.nginx /etc/nginx/sites-available/default
 CMD ['script.sh']
