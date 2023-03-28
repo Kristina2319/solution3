@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-RUN apt update 
+RUN apt update
 RUN apt install php-bcmath php-curl php-fpm
 RUN apt install php-imagick php-intl php-json
 RUN apt install php-mbstring php-mysql php-xml php-zip
