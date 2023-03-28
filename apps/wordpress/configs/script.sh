@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 set -e
-service php-fpm start
+php-fpm8.1 start --deamonize
 nginx -g 'daemon off;'
