@@ -6,12 +6,12 @@ services:
     image: ghcr.io/Kristina2319/Solution3/blob/main/apps/nginx
 
   app1:
-    image: ghcr.io//Kristina2319/Solution3/tree/main/apps/wordpress
+    image: ghcr.io/Kristina2319/Solution3/tree/main/apps/wordpress
      ports:
       - 80:80
 
   app2:
-    image: ghcr.io//Kristina2319/Solution3/tree/main/apps/wordpress
+    image: ghcr.io/Kristina2319/Solution3/tree/main/apps/wordpress
      ports:
       - 80:80
 
