@@ -17,7 +17,7 @@ services:
 
   db:
     image: mysql
-     environment:
+    environment:
       - MYSQL_ROOT_PASSWORD=rootwordpress
       - MYSQL_DATABASE=wordpress
       - MYSQL_USER=wordpress
