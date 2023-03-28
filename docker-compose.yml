@@ -3,18 +3,17 @@ version: '3'
 services:
   load_balancer:
   # if github
-    image: ghcr.io/Kristina2319/solution3/main/apps/nginx/Dockerfile
+    image: ghcr.io/kristina2319/solution3:nginx
 
   app1:
-    image: ghcr.io/Kristina2319/solution3/main/apps/wordpress/Dockerfile
+    image: ghcr.io/kristina2319/solution3:wordpress
     ports:
       - 80:80
 
   app2:
-    image: ghcr.io/Kristina2319/solution3/main/apps/wordpress/Dockerfile
+    image: ghcr.io/kristina2319/solution3:wordpress
     ports:
       - 80:80
-
   db:
     image: mysql
     environment:
