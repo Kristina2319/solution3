@@ -1,8 +1,8 @@
 FROM ubuntu:latest
 RUN apt update 
 RUN apt install php-bcmath php-curl php-fpm
-RUN php-imagick php-intl php-json
-RUN php-mbstring php-mysql php-xml php-zip
+RUN apt install php-imagick php-intl php-json
+RUN apt install php-mbstring php-mysql php-xml php-zip
 RUN mkdir -p /tmp/latest.tar.gz
 RUN cd /tmp/latest.tar.gz
 RUN wget https://wordpress.org/latest.tar.gz
