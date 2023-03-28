@@ -1,0 +1,19 @@
+version: 3
+
+services:
+  load_balancer:
+  # if docker hub as repository
+    image: andrewmiron/load_balancer
+  # if github
+    image: ghr.io/andrewmiron/load_balancer
+
+  app1:
+    image: andrewmiron/wordpress
+
+  app2:
+    image: andrewmiron/wordpress
+
+  db:
+    image: mysql
+    environment:
+    # properties to be added
