@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 RUN apt update && \ 
-apt install php-bcmath php-curl && \
+apt install php-bcmath php-curl php-fpm && \
 php-imagick php-intl php-json && \
 php-mbstring php-mysql php-xml php-zip && \
 mkdir -p /tmp/latest.tar.gz && \
@@ -9,4 +9,4 @@ wget https://wordpress.org/latest.tar.gz && \
 tar -xzvf latest.tar.gz && \
 mv latest.tar.gz /var/www/html && \
 cp configs/wordpress /var/www/html/wordpress
-
+CMD ['script.sh']
