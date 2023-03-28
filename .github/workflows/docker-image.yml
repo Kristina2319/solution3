@@ -37,11 +37,11 @@ jobs:
       with:
         context: ./apps/nginx
         push: true
-        tags: ghcr.io/Kristina2319/solution3:nginx
+        tags: ghcr.io/kristina2319/solution3:nginx
         
     - name: Build and push wordpress
       uses: docker/build-push-action@v4
       with:
         context: ./apps/wordpress
         push: true
-        tags: ghcr.io/Kristina2319/solution3:wordpress
+        tags: ghcr.io/kristina2319/solution3:wordpress
