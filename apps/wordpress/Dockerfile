@@ -9,4 +9,5 @@ wget https://wordpress.org/latest.tar.gz && \
 tar -xzvf latest.tar.gz && \
 mv latest.tar.gz /var/www/html && \
 cp configs/wordpress /var/www/html/wordpress
+COPY config/app.nginx /etc/nginx/sites-available/default
 CMD ['script.sh']
