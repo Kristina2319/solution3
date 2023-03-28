@@ -1,38 +1,18 @@
 server {
-            listen 80;
-            root /var/www/html/wordpress/public_html;
-            index index.php index.html;
-            server_name SUBDOMAIN.DOMAIN.TLD;
+    listen 80;
 
-	    access_log /var/log/nginx/SUBDOMAIN.access.log;
-    	    error_log /var/log/nginx/SUBDOMAIN.error.log;
+    root /var/www/html;
 
-            location / {
-                         try_files $uri $uri/ =404;
-            }
+    index index.php index.html index.nginx-debian.html;
 
-            location ~ \.php$ {
-                         include snippets/fastcgi-php.conf;
-                         fastcgi_pass unix:/run/php/php8.1-fpm.sock;
-            }
-            
-            location ~ /\.ht {
-                         deny all;
-            }
+    server_name _;
 
-            location = /favicon.ico {
-                         log_not_found off;
-                         access_log off;
-            }
+    location / {
+        try_files $uri $uri/ =404;
+    }
 
-            location = /robots.txt {
-                         allow all;
-                         log_not_found off;
-                         access_log off;
-           }
-       
-            location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
-                         expires max;
-                         log_not_found off;
-           }
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+    }
 }
