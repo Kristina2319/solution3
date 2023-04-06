@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:jammy-20230308
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update && \
     apt install wget nginx  php-bcmath php-curl php-fpm -y && \
