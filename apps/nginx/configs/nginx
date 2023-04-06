@@ -1,6 +1,6 @@
 upstream wordpress {
-	server wordpress1;
-	server wordpress2;
+	server app1;
+	server app2;
 }
 
 server {
