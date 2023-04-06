@@ -13,7 +13,7 @@ services:
   app2:
     image: ghcr.io/kristina2319/solution3:wordpress
     ports:
-      - 80:8080
+      - 80:80
   db:
     image: mysql
     environment:
