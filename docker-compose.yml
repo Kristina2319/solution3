@@ -4,23 +4,23 @@ services:
   load_balancer:
   # if github
     image: ghcr.io/kristina2319/solution3:nginx
-
-  app1:
-    image: ghcr.io/kristina2319/solution3:wordpress
     depends_on:
       - app1
       - app2
+
+  app1:
+    image: ghcr.io/kristina2319/solution3:wordpress
     ports:
       - 80:80
     depends_on:
-      - mysql
+      - db
 
   app2:
     image: ghcr.io/kristina2319/solution3:wordpress
     ports:
       - 80:80
     depends_on:
-      - mysql 
+      - db 
   db:
     image: mysql
     environment:
