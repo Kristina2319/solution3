@@ -7,24 +7,20 @@ services:
     depends_on:
       - app1
       - app2
-     networks:
-      - nginx_wordpress
 
   app1:
     image: ghcr.io/kristina2319/solution3:wordpress
     depends_on:
       - db
-     networks:
-      - nginx_wordpress
-      - wordpress_mysql
+    ports:
+      - 80:80
 
   app2:
     image: ghcr.io/kristina2319/solution3:wordpress
     depends_on:
       - db
-    networks:
-      - nginx_wordpress
-      - wordpress_mysql
+    ports:
+      - 80:80
   db:
     image: mysql
     environment:
