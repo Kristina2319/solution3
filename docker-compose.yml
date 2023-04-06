@@ -7,13 +7,20 @@ services:
 
   app1:
     image: ghcr.io/kristina2319/solution3:wordpress
+    depends_on:
+      - app1
+      - app2
     ports:
       - 80:80
+    depends_on:
+      - mysql
 
   app2:
     image: ghcr.io/kristina2319/solution3:wordpress
     ports:
       - 80:80
+    depends_on:
+      - mysql 
   db:
     image: mysql
     environment:
