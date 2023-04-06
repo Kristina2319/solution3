@@ -19,8 +19,8 @@ services:
     image: ghcr.io/kristina2319/solution3:wordpress
     depends_on:
       - db
-    ports:
-      - 80:80
+    #ports:
+      #- 80:80
   db:
     image: mysql
     environment:
